@@ -1,4 +1,25 @@
-# OtakuStoreApp
+# Otaku Store APP
+
+Repositório contendo a aplicação e documentação, artefatos gerados durante a disciplina de Análise e Projeto de Sistemas, ministrada no curso de Ciência da computação da faculdade de Americana. Segundo semestre de 2019.
+
+## Tecnologias utilizadas
+* TypeScript
+* Angular 8
+* JavaScript
+* CSS
+* HTML
+
+## Objetivos
+
+* Consumir Web Services REST usando os serviços Http e HttpClient
+
+## Modulos utilizados
+* admin_lte
+* jquery
+* font-awesome
+
+
+# Referentes ao frame work
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
