@@ -6,6 +6,7 @@ import { Banca } from './banca/banca.model'
   selector: 'otk-bancas',
   templateUrl: './bancas.component.html'
 })
+
 export class BancasComponent implements OnInit {
 
 //criando um array em memória para representar os dados da banca

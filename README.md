@@ -19,7 +19,7 @@ Repositório contendo a aplicação e documentação, artefatos gerados durante 
 * font-awesome
 
 
-# Referentes ao frame work
+# Referentes ao framework
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
