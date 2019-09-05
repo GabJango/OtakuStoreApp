@@ -1,0 +1,22 @@
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header">
+	<h1>
+		Todas as Bancas
+	</h1>
+</section>
+
+
+<section class="content">
+
+	<div class="row">
+<!--  bancas é uma propriedade do componente que tem pelo menos 2 itens iterando nesses itens e repetindo esta estrutura
+      então temos uma propriedade chamda banca que tem um item que está sendo interado pela lista  usando a diretiva ngfor-->
+			<div *ngFor="let banca of bancas" class="col-sm-6 col-xs-12">
+<!-- property bind com o item individual que está sendo interado com ngfor-->
+					<otk-banca [banca]="banca"></otk-banca>
+				</div>
+	</div>
+
+</section>
+
+<!-- FIM  do CONTEÚDO -->
