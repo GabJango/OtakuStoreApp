@@ -13,6 +13,8 @@ import { HttpClient } from '@angular/common/http'
 //para uma classe de serviço receber outros serviço via dependencia precisamos importar o decorator
 import { Injectable } from '@angular/core'
 
+import {MenuItem} from '../banca-detail/menu-item/menu-item.model'
+
 
 // HEADERS PARA utilzar quando necessário GET utilizando Authorization
 //
@@ -48,5 +50,9 @@ export class BancasService {
 	ReviewsOfBanca(id: string): Observable<any[]> {
 		// retornando dados usando ID especifico para cada banca.
 		 return this.http.get<any[]>(`${BANCA_API}/reviews/read_reviews.php?id=${id}`)
+	}
+
+	menuOfBancas(id: string): Observable<MenuItem[]>{
+		return this.http.get<MenuItem[]>(`${BANCA_API}/list_mangas/read_list_mangas.php?id=${id}`)
 	}
 }
