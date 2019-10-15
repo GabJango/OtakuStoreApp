@@ -15,7 +15,12 @@ import { AboutComponent } from './about/about.component';
 import { BancasComponent } from './bancas/bancas.component';
 import { BancaComponent } from './bancas/banca/banca.component';
 // Declaramos o bancasService para o angular reconhecer o provider
-import { BancasService } from './bancas/bancas.service'
+import { BancasService } from './bancas/bancas.service';
+import { BancaDetailComponent } from './banca-detail/banca-detail.component';
+import { MenuComponent } from './banca-detail/menu/menu.component';
+import { ShoppingCartComponent } from './banca-detail/shopping-cart/shopping-cart.component';
+import { MenuItemComponent } from './banca-detail/menu-item/menu-item.component';
+import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
 
 //Declarations => Todos os componentes dentro da aplicação
 @NgModule({
@@ -25,7 +30,12 @@ import { BancasService } from './bancas/bancas.service'
     HomeComponent,
     AboutComponent,
     BancasComponent,
-    BancaComponent
+    BancaComponent,
+    BancaDetailComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    MenuItemComponent,
+    ReviewsComponent
   ],
 // Imports => oque nos vamos usar, quais são nossas dependências
   imports: [
