@@ -21,6 +21,7 @@ import { MenuComponent } from './banca-detail/menu/menu.component';
 import { ShoppingCartComponent } from './banca-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './banca-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
+import {ShoppingCartService} from './banca-detail/shopping-cart/shopping-cart.service'
 
 //Declarations => Todos os componentes dentro da aplicação
 @NgModule({
@@ -44,7 +45,7 @@ import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
 		HttpClientModule
   ],
 // bootsrap => dentro do array de declarations qual é o responsável por fazer o bootstrap da aplicação
-  providers: [BancasService],
+  providers: [BancasService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

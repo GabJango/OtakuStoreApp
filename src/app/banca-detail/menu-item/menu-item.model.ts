@@ -1,7 +1,8 @@
 export interface MenuItem {
-	id: string
-	name: string
+	bancaId: string
 	description: string
-	price: number
+	id_name: string
 	imagePath: string
+	name: string
+	price: number
 }

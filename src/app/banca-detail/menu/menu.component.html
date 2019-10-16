@@ -1,9 +1,11 @@
 <!--INÍCIO DO MENU -->
 <div class="col-md-9 col-xs-12">
-		<otk-menu-item *ngFor="let item of menu | async" [menuItem]="item"></otk-menu-item>
+		<otk-menu-item *ngFor="let item of menu | async"
+		[menuItem]="item"
+		(add)="shoppingCart.addItem($event)"></otk-menu-item>
 </div>
 
 <div class="col-md-3 col-xs-12">
-	<otk-shopping-cart></otk-shopping-cart>
+	<otk-shopping-cart #shoppingCart></otk-shopping-cart>
 </div>
 <!-- FIM DO MENU -->

@@ -20,4 +20,7 @@ export class MenuComponent implements OnInit {
 		.menuOfBancas(this.route.parent.snapshot.params['id'])
   }
 
+		addMenuItem(item: MenuItem){
+			console.log(item)
+		}
 }
