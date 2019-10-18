@@ -14,6 +14,8 @@ import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
 
 import { MenuComponent } from './banca-detail/menu/menu.component'
 
+import { OrderComponent } from './order/order.component'
+
 const routes: Routes = [
 	// Quando criados uma rota vázia estamos dizendo ao angular que aquela é nossa rota principal ("home") sendo esse o primeiro componente
 	{path: '', component: HomeComponent},
@@ -29,9 +31,10 @@ const routes: Routes = [
 		children: [
 			{path: '', redirectTo: 'menu', pathMatch: 'full'},
 			{path: 'menu', component: MenuComponent},
-			{path: 'reviews', component: ReviewsComponent}
+			{path: 'reviews', component: ReviewsComponent},
 		]
-	}
+	},
+	{path: 'order', component: OrderComponent}
 
 ];
 

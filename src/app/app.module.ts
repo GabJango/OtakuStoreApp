@@ -2,7 +2,14 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 // NGMODULE => DECORETOR
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+
+import { FormsModule } from '@angular/forms'
+
+//alterar lingua padrão
+import { registerLocaleData } from '@angular/common';
+import localept from '@angular/common/locales/pt';
+registerLocaleData(localept, 'pt');
 
 // importando modulo HTTP para utilização declarar na lista de declarations
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +28,10 @@ import { MenuComponent } from './banca-detail/menu/menu.component';
 import { ShoppingCartComponent } from './banca-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './banca-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
-import {ShoppingCartService} from './banca-detail/shopping-cart/shopping-cart.service'
+import {ShoppingCartService} from './banca-detail/shopping-cart/shopping-cart.service';
+import { OrderComponent } from './order/order.component';
+import { InputComponent } from './shared/input/input.component';
+import { RadioComponent } from './shared/radio/radio.component'
 
 //Declarations => Todos os componentes dentro da aplicação
 @NgModule({
@@ -36,16 +46,20 @@ import {ShoppingCartService} from './banca-detail/shopping-cart/shopping-cart.se
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    OrderComponent,
+    InputComponent,
+    RadioComponent
   ],
 // Imports => oque nos vamos usar, quais são nossas dependências
   imports: [
     BrowserModule,
     AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule
   ],
 // bootsrap => dentro do array de declarations qual é o responsável por fazer o bootstrap da aplicação
-  providers: [BancasService, ShoppingCartService],
+  providers: [BancasService, ShoppingCartService, {provide: LOCALE_ID, useValue:'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+<!-- criando metodo hasError e hasSuccess para limpar template -->
+<div class="form-group" [class.has-success]="hasSuccess()"
+												[class.has-error]="hasError()" >
+		<label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> {{label}}</label>
+		<!-- aplicando input context -->
+		<ng-content></ng-content>
+		<!-- pegando referencia de um elemento-->
+
+		<span class="help-block" *ngIf="hasSuccess()"><i class="fa fa-check"></i> OK</span>
+		<span class="help-block" *ngIf="hasError()"><i class="fa fa-remove"></i>{{errorMessage}}o</span>
+</div>
