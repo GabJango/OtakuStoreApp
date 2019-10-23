@@ -31,8 +31,10 @@ import { ReviewsComponent } from './banca-detail/reviews/reviews.component'
 import {ShoppingCartService} from './banca-detail/shopping-cart/shopping-cart.service';
 import { OrderComponent } from './order/order.component';
 import { InputComponent } from './shared/input/input.component';
-import { RadioComponent } from './shared/radio/radio.component'
-
+import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component'
+import { OrderService } from './order/order.service';
+import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component'
 //Declarations => Todos os componentes dentro da aplicação
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { RadioComponent } from './shared/radio/radio.component'
     ReviewsComponent,
     OrderComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItemsComponent,
+    DeliveryCostsComponent
   ],
 // Imports => oque nos vamos usar, quais são nossas dependências
   imports: [
@@ -59,7 +63,7 @@ import { RadioComponent } from './shared/radio/radio.component'
 		FormsModule
   ],
 // bootsrap => dentro do array de declarations qual é o responsável por fazer o bootstrap da aplicação
-  providers: [BancasService, ShoppingCartService, {provide: LOCALE_ID, useValue:'pt-BR'}],
+  providers: [BancasService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue:'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
