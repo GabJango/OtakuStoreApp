@@ -45,7 +45,7 @@ constructor(private cartService: ShoppingCartService,
 
 	getIPAddress()
 	{
-			return this.http.get("http://api.ipify.org/?format=json").pipe(map((res) =>{ return res['ip']}));
+			return this.http.get("https://api.ipgeolocation.io/getip").pipe(map((res) =>{ return res['ip']}));
 	}
 
 
