@@ -21,7 +21,7 @@
 									<p class="lead">Endereço de Entrega:</p>
 								</div>
 								<div class="col-sm-6 col-xs-12">
-									<otk-input-container errorMessage="Campo Obrigatório e com 5 caracteres " label="Enredeço">
+									<otk-input-container errorMessage="Campo Obrigatório e com 5 caracteres" label="Enredeço">
 										<input class="form-control" name="address" ngModel required minlength="5" autocomplete="off" placeholder="Endereço">
 									</otk-input-container>
 								</div>
@@ -35,15 +35,18 @@
 											<input type="text" class="form-control" name="optionalAddress" ngModel placeholder="Complemento">
 										</otk-input-container>
 								</div>
-								<div class="col-sm-3 col-xs-6">
-										<otk-input-container>
-											<input type="text" class="form-control" name="id" ngModel required autocomplete="off" placeholder="id da compra">
-										</otk-input-container>
+								<div [hidden]="!form.valid">
+									<div class="col-xs-12">
+										<p class="lead">Número do pedido:</p>
+									</div>
+								<div class="col-sm-12 col-xs-12" >
+										 <input type="number" class="form-control bg-green text-center" name="id" [(ngModel)]="OrderValue" ngModel required autocomplete="off" placeholder="ID da compra" [readonly]="true">
+								</div>
 								</div>
 								<!-- /.col -->
 							</div>
 							<!-- /.row -->
-
+							<br>
 							<!-- Table row -->
 							<div class="row">
 								<div class="col-xs-12">

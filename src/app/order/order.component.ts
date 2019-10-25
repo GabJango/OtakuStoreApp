@@ -12,13 +12,30 @@ import {Order, OrderItem} from './order.model';
 export class OrderComponent implements OnInit {
 
 	delivery: number = 8
+	OrderValue: number = 0
+	todaysDate: number
+	ipValue: string
+	ValueNumber: number
+	OrderString: string
+
 
 		paymentOptions: RadioOption[] = [
 			{label: 'Dinheiro', value: 'MON'},
 			{label: 'Cartão de Débito', value: 'DEB'},
 		]
 
-	constructor(private orderService: OrderService) { }
+	constructor(private orderService: OrderService) {
+
+		this.orderService.getIPAddress().subscribe((ip: string)=>{
+			this.ipValue = ip.replace(/\./g, ' ').replace(/\s/g, "")
+			this.todaysDate = +Date.now()
+			this.ValueNumber = +this.ipValue
+			this.OrderString = String(this.ValueNumber + this.todaysDate)
+			this.OrderString = this.OrderString.substr(4)
+			this.OrderValue =  +this.OrderString
+
+		})
+	}
 
 	ngOnInit() {
 	}
@@ -52,5 +69,4 @@ export class OrderComponent implements OnInit {
 			this.orderService.clear()
 		})
 	}
-
 }

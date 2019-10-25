@@ -18,7 +18,7 @@ constructor(private cartService: ShoppingCartService,
 
 	cartItems(): CartItem[]{
 		return this.cartService.items
-}
+	}
 
 	increaseQty (item: CartItem){
 			this.cartService.increaseQty(item)
@@ -42,5 +42,11 @@ constructor(private cartService: ShoppingCartService,
 	return this.http.post<string>(`${BANCA_API}/order/order_insert.php`, JSON.stringify(order), {headers: headers})
 		.pipe(map((res) =>{ return res}))
 }
+
+	getIPAddress()
+	{
+			return this.http.get("http://api.ipify.org/?format=json").pipe(map((res) =>{ return res['ip']}));
+	}
+
 
 }
