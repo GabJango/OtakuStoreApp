@@ -5,6 +5,8 @@ import {OrderService} from './order.service';
 import {CartItem} from '../banca-detail/shopping-cart/cart-item.model';
 import {Order, OrderItem} from './order.model';
 
+import {Router} from '@angular/router'
+
 @Component({
   selector: 'otk-order',
   templateUrl: './order.component.html'
@@ -24,7 +26,8 @@ export class OrderComponent implements OnInit {
 			{label: 'Cartão de Débito', value: 'DEB'},
 		]
 
-	constructor(private orderService: OrderService) {
+	constructor(private orderService: OrderService,
+							private router: Router) {
 
 		this.orderService.getIPAddress().subscribe((ip: string)=>{
 			this.ipValue = ip.replace(/\./g, ' ').replace(/\s/g, "")
@@ -65,6 +68,8 @@ export class OrderComponent implements OnInit {
 		.map((item:CartItem)=> new OrderItem(item.quantity, item.menuItem.id_name))
 		console.log(order)
 		this.orderService.checkOrder(order).subscribe(()=>{
+			//chamando a rota do order-sumary
+			this.router.navigate(['/order-sumary'])
 			console.log(`Compra efetuada com sucesso ${order.id}`)
 			this.orderService.clear()
 		})

@@ -16,6 +16,8 @@ import { MenuComponent } from './banca-detail/menu/menu.component'
 
 import { OrderComponent } from './order/order.component'
 
+import {OrderSumaryComponent} from './order-sumary/order-sumary.component'
+
 const routes: Routes = [
 	// Quando criados uma rota vázia estamos dizendo ao angular que aquela é nossa rota principal ("home") sendo esse o primeiro componente
 	{path: '', component: HomeComponent},
@@ -34,7 +36,8 @@ const routes: Routes = [
 			{path: 'reviews', component: ReviewsComponent},
 		]
 	},
-	{path: 'order', component: OrderComponent}
+	{path: 'order', component: OrderComponent},
+	{path: 'order-sumary', component: OrderSumaryComponent}
 
 ];
 
