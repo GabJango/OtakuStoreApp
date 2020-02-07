@@ -2,6 +2,9 @@
 
 Repositório contendo a aplicação e documentação, artefatos gerados durante a disciplina de Análise e Projeto de Sistemas, ministrada no curso de Ciência da computação da faculdade de Americana. Segundo semestre de 2019.
 
+## Acessar a aplicação em
+[Otaku Store](https://otakustore.mybluemix.net/)
+
 ## Tecnologias utilizadas
 * TypeScript
 * Angular 8
